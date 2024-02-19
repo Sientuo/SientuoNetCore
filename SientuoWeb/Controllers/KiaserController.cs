@@ -3,10 +3,8 @@ using Microsoft.AspNetCore.Mvc;
 using SientuoComm.Helper;
 using SientuoInterFace;
 using SientuoService;
-using SientuoWeb.Utility;
 using System.ComponentModel;
 using System.Reflection;
-using System.Runtime.CompilerServices;
 
 namespace SientuoWeb.Controllers
 {
@@ -19,6 +17,7 @@ namespace SientuoWeb.Controllers
             _manData = manData;
             _person = person;
         }
+
 
 
         public IActionResult Index()
