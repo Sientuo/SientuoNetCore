@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using SientuoComm.Helper;
 using SientuoInterFace;
 using SientuoService;
+using SientuoWeb.Utility;
 using System.ComponentModel;
 using System.Reflection;
 
@@ -19,7 +20,7 @@ namespace SientuoWeb.Controllers
         }
 
 
-
+        [CustomResourceFilter]
         public IActionResult Index()
         {
 
@@ -34,5 +35,15 @@ namespace SientuoWeb.Controllers
 
             return View(Kiaser4);
         }
+
+        [TypeFilter(typeof(CustomExceptionFilterAttribute))]
+        public IActionResult XXX() 
+        {
+            int a = 0;
+            int c = 5 / a;
+            return View();
+        }
+
+
     }
 }
