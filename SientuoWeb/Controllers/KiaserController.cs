@@ -36,7 +36,7 @@ namespace SientuoWeb.Controllers
             return View(Kiaser4);
         }
 
-        [TypeFilter(typeof(CustomExceptionFilterAttribute))]
+        //[TypeFilter(typeof(CustomExceptionFilterAttribute))]
         public IActionResult XXX() 
         {
             int a = 0;

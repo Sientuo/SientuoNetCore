@@ -1,4 +1,6 @@
+using Microsoft.Extensions.Options;
 using NLog.Web;
+using SientuoWeb.Utility;
 
 namespace SientuoWeb
 {
@@ -9,7 +11,10 @@ namespace SientuoWeb
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
-            builder.Services.AddControllersWithViews();
+            builder.Services.AddControllersWithViews(option => {
+
+                option.Filters.Add<CustomExceptionFilterAttribute>();
+            });
 
             builder.Logging.AddNLog("NLog/NLog.config");
 
@@ -18,8 +23,9 @@ namespace SientuoWeb
             InitData.ConfigurationShow(builder.Configuration);
 
 
-
             var app = builder.Build();
+
+            
 
             // Configure the HTTP request pipeline.
             if (!app.Environment.IsDevelopment())
