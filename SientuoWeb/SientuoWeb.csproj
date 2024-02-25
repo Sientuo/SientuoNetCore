@@ -25,6 +25,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\SientuoComm\SientuoComm.csproj" />
+    <ProjectReference Include="..\SientuoDLL\SientuoDLL.csproj" />
+    <ProjectReference Include="..\SientuoIDLL\SientuoIDLL.csproj" />
     <ProjectReference Include="..\SientuoInterFace\SientuoInterFace.csproj" />
     <ProjectReference Include="..\SientuoService\SientuoService.csproj" />
   </ItemGroup>

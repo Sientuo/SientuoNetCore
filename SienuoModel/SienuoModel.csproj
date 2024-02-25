@@ -6,9 +6,4 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\SientuoIDLL\SientuoIDLL.csproj" />
-    <ProjectReference Include="..\SientuoInterFace\SientuoInterFace.csproj" />
-  </ItemGroup>
-
 </Project>

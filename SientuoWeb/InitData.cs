@@ -2,6 +2,8 @@
 using Autofac.Builder;
 using Autofac.Extensions.DependencyInjection;
 using Microsoft.AspNetCore.Identity;
+using SientuoDLL;
+using SientuoIDLL;
 using SientuoInterFace;
 using SientuoService;
 using System.Reflection;
@@ -18,7 +20,8 @@ namespace SientuoWeb
 
                 ContainerBuilder.RegisterType<ManService>().As<IManData>();
                 ContainerBuilder.RegisterType<PersionService>().As<IPerson>();
-
+                ContainerBuilder.RegisterType<StudentService>().As<IStudent>();
+                ContainerBuilder.RegisterType<StudentDLL>().As<IStudentDLL>();
             });
 
         }

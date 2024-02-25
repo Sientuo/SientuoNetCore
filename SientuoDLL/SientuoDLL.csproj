@@ -7,8 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="SqlSugarCore" Version="5.1.4.143" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\SientuoIDLL\SientuoIDLL.csproj" />
-    <ProjectReference Include="..\SientuoInterFace\SientuoInterFace.csproj" />
+    <ProjectReference Include="..\SienuoModel\SienuoModel.csproj" />
   </ItemGroup>
 
 </Project>

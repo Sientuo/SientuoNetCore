@@ -1,6 +1,7 @@
 ﻿using Autofac;
 using Microsoft.AspNetCore.Mvc;
 using SientuoComm.Helper;
+using SientuoIDLL;
 using SientuoInterFace;
 using SientuoService;
 using SientuoWeb.Utility;
@@ -13,10 +14,12 @@ namespace SientuoWeb.Controllers
     {
         private readonly IManData _manData;
         private readonly IPerson _person;
-        public KiaserController(IManData manData, IPerson person) 
+        private readonly IStudent _student;
+        public KiaserController(IManData manData, IPerson person,IStudent student) 
         {
             _manData = manData;
             _person = person;
+            _student = student;
         }
 
 
@@ -25,7 +28,7 @@ namespace SientuoWeb.Controllers
         {
 
             ViewData["Kiaser2"] = _person.IsDrink();
-            TempData["Kiaser3"] = "我是王五";
+            TempData["Kiaser3"] = _student.GetStudent("1111").SName;
             object Kiaser4 = "我是哈哈哈";
 
            
