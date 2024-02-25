@@ -4,13 +4,25 @@
     Exception exception = ViewData["Exception"] as Exception;
 }
 
-<h1 class="text-danger">Error.</h1>
-<h2 class="text-danger">An error occurred while processing your request.</h2>
+<style>
 
-<h3>人类的悲伤并不相同</h3>
-<p>
-   <strong>Development</strong> 请联系管理员
-</p>
-<p>
-    <strong>@exception.Message</strong>
-</p>
+    body{
+        background-image: url(./img/837360676.jpg);
+        width: 100%;
+        background-size: cover;
+    }
+
+</style>
+
+
+<div style="padding-top:50px;padding-left:550px;color:black;font-size:16px;font-weight: bold;">
+    
+    <h1 style="color:red">人类的悲伤并不相同,请联系管理员</h1>
+    <p>
+        <h1>Development</h1> 
+    </p>
+    <p>
+        <h2>@exception.Message</h2>
+    </p>
+</div>
+

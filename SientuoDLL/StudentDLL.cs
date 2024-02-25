@@ -11,7 +11,6 @@ using System.Threading.Tasks;
 
 namespace SientuoDLL
 {
-    public class StudentDLL:DataBase
     {
         public StudentDLL(ISqlSugarClient client) : base(client)
         {
