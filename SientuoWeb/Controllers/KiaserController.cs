@@ -31,8 +31,6 @@ namespace SientuoWeb.Controllers
             TempData["Kiaser3"] = _student.GetStudent("1111").SName;
             object Kiaser4 = "我是哈哈哈";
 
-           
-
             ViewBag.Kiaser1 = _manData.GetName();
             LogHelper.WriteInfo("这是我的第一个core日志");
 

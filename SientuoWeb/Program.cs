@@ -12,7 +12,6 @@ namespace SientuoWeb
 
             // Add services to the container.
             builder.Services.AddControllersWithViews(option => {
-
                 option.Filters.Add<CustomExceptionFilterAttribute>();
             });
 
@@ -20,7 +19,7 @@ namespace SientuoWeb
 
             builder.InitAntoFacDLL();
 
-            InitData.ConfigurationShow(builder.Configuration);
+            InitData.ConfigurationShow(builder);
 
 
             var app = builder.Build();

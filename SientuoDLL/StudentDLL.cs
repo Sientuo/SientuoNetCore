@@ -11,15 +11,17 @@ using System.Threading.Tasks;
 
 namespace SientuoDLL
 {
-    public class StudentDLL: IStudentDLL
     {
-        //获取学生名字
+        public StudentDLL(ISqlSugarClient client) : base(client)
+        {
+
+        }
 
         public Student GetStudent(string code)
         {
             string sql = $" select * from student where susercode = '{code}'";
 
-            return SqlSugarUtil.SqlSugarClient.SqlQueryable<Student>(sql).First();
+            return _db.SqlQueryable<Student>(sql).First();
         }
     }
 }

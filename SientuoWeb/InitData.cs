@@ -6,6 +6,7 @@ using SientuoDLL;
 using SientuoIDLL;
 using SientuoInterFace;
 using SientuoService;
+using SqlSugar;
 using System.Reflection;
 
 namespace SientuoWeb
@@ -27,13 +28,27 @@ namespace SientuoWeb
         }
 
 
-        public static void ConfigurationShow(IConfiguration configuration) 
+        public static void ConfigurationShow(this WebApplicationBuilder builder) 
         {
-            var list1 = configuration.GetSection("ConnectionStrings");
-            var list2= configuration.GetSection("ConnectionStrings:WriteConnections");
+            //var list1 = configuration.GetSection("ConnectionStrings");
+            //var list2= configuration.GetSection("ConnectionStrings:WriteConnections");
+            //var ID = configuration["Id"];
+            //var info = configuration["Info"];
 
-            var ID = configuration["Id"];
-            var info = configuration["Info"];
+            builder.Host.ConfigureContainer<ContainerBuilder>(container =>
+            {
+                container.Register<ISqlSugarClient>(context =>
+                {
+                    SqlSugarClient db = new(new ConnectionConfig()
+                    {
+                        DbType = DbType.SqlServer,
+                        IsAutoCloseConnection = true,
+                        ConnectionString = builder.Configuration.GetConnectionString("WriteConnections")
+                    });
+                    return db;
+                });
+            });
+
         }
     }
 }
